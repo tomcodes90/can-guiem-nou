@@ -1,0 +1,93 @@
+{
+  "navigation" : {
+    "barName" : "Ca'n Guiem Nou",
+    "home" : "Home",
+    "events" : "Events",
+    "menu" : "Menu",
+    "about" : "About",
+    "location" : "Location"
+  },
+  "home" : {
+    "hero" : {
+      "title" : "Craft Cocktails & Memorable Moments",
+      "viewMenu" : "View Menu",
+      "visitUs" : "Visit Us"
+    },
+    "weeklyMenu" : {
+      "title" : "This Week's Menu",
+      "seeFullMenu" : "See Full Menu"
+    },
+    "ourStory" : {
+      "title" : "Our Story",
+      "readMore" : "Read More",
+      "founded" : "Founded",
+      "yearsOfHistory" : "Years of History"
+    },
+    "contact" : {
+      "title" : "Visit Us",
+      "address" : "Address",
+      "phone" : "Phone",
+      "email" : "Email"
+    },
+    "footer" : {
+      "openingHours" : "Opening Hours",
+      "contactUs" : "Contact Us",
+      "followUs" : "Follow Us",
+      "rights" : "All rights reserved",
+      "rateUs" : "Rate Us on Google",
+      "mon" : "Monday",
+      "tue" : "Tuesday",
+      "wed" : "Wednesday",
+      "thu" : "Thursday",
+      "fri" : "Friday",
+      "sat" : "Saturday",
+      "sun" : "Sunday"
+    },
+    "location" : {
+      "title" : "Visit Us",
+      "getDirections" : "Get Directions",
+      "openingHours" : "Opening Hours",
+      "closed" : "Closed",
+      "contactUs" : "Contact Us"
+    }
+  },
+  "menu" : {
+    "title" : "Our Menu",
+    "downloadPdf" : "Download Menu (PDF)",
+    "comingSoon" : "Menu Coming Soon",
+    "checkBack" : "Check back soon for our latest offerings!",
+    "readyToVisit" : "Ready to visit?",
+    "getDirections" : "Get Directions",
+    "featured" : "Featured",
+    "unavailable" : "Unavailable",
+    "categories" : {
+      "tapas" : "Tapas",
+      "pizzas" : "Pizzas",
+      "ensaladas" : "Salads",
+      "pamboli" : "Pamboli",
+      "burgers" : "Burgers",
+      "algo-mas" : "Something More"
+    },
+    "digitalMenu" : "Digital Menu",
+    "exploreMenu" : "Explore Our Dishes",
+    "downloadMenu" : "Download Menu",
+    "lunchSpecial" : "Lunch Special",
+    "weeklyLunch" : "Weekly Menu",
+    "fullMenu" : "Full Menu"
+  },
+  "dailyMenu" : {
+    "title" : "Today's Lunch Special"
+  },
+  "downloadMenu" : "Download Menu",
+  "events" : {
+    "title" : "Events",
+    "explore" : "Explore",
+    "noEvents" : "No upcoming events"
+  },
+  "hero" : {
+    "events" : "Events",
+    "menu" : "Menu",
+    "location" : "Location",
+    "explore" : "Explore"
+  }
+}

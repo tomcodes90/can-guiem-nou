@@ -1,0 +1,92 @@
+{
+  "navigation" : {
+    "barName" : "Ca'n Guiem Nou",
+    "home" : "Inici",
+    "events" : "Esdeveniments",
+    "menu" : "Menú",
+    "about" : "Nosaltres",
+    "location" : "Ubicació"
+  },
+  "home" : {
+    "hero" : {
+      "title" : "Còctels Artesanals i Moments Memorables",
+      "viewMenu" : "Veure Menú",
+      "visitUs" : "Visita'ns"
+    },
+    "weeklyMenu" : {
+      "title" : "Menú d'Aquesta Setmana",
+      "seeFullMenu" : "Veure Menú Complet"
+    },
+    "ourStory" : {
+      "title" : "Nuestra Historia",
+      "founded" : "Fundado",
+      "yearsOfHistory" : "Años de Historia"
+    },
+    "contact" : {
+      "title" : "Visita'ns",
+      "address" : "Adreça",
+      "phone" : "Telèfon",
+      "email" : "Correu"
+    },
+    "footer" : {
+      "openingHours" : "Horario",
+      "contactUs" : "Contacto",
+      "followUs" : "Síguenos",
+      "rights" : "Todos los derechos reservados",
+      "rateUs" : "Valora'ns a Google",
+      "mon" : "Lunes",
+      "tue" : "Martes",
+      "wed" : "Miércoles",
+      "thu" : "Jueves",
+      "fri" : "Viernes",
+      "sat" : "Sábado",
+      "sun" : "Domingo"
+    },
+    "location" : {
+      "title" : "Visita'ns",
+      "getDirections" : "Com Arribar",
+      "openingHours" : "Horari",
+      "closed" : "Tancat",
+      "contactUs" : "Contacte"
+    }
+  },
+  "menu" : {
+    "title" : "El Nostre Menú",
+    "downloadPdf" : "Descarregar Menú (PDF)",
+    "comingSoon" : "Menú Properament",
+    "checkBack" : "Torna aviat per veure les nostres últimes ofertes!",
+    "readyToVisit" : "Preparat per visitar-nos?",
+    "getDirections" : "Com Arribar",
+    "featured" : "Destacat",
+    "unavailable" : "No Disponible",
+    "categories" : {
+      "tapas" : "Tapes",
+      "pizzas" : "Pizzes",
+      "ensaladas" : "Amanides",
+      "pamboli" : "Pamboli",
+      "burgers" : "Hamburgueses",
+      "algo-mas" : "Alguna Cosa Més"
+    },
+    "digitalMenu" : "Menú Digital",
+    "exploreMenu" : "Explora els Nostres Plats",
+    "downloadMenu" : "Descarregar Menú",
+    "lunchSpecial" : "Menú del Dia",
+    "weeklyLunch" : "Menú Setmanal",
+    "fullMenu" : "Menú Complet"
+  },
+  "dailyMenu" : {
+    "title" : "Menú del Dia"
+  },
+  "downloadMenu" : "Descarregar Menú",
+  "events" : {
+    "title" : "Activitats",
+    "explore" : "Explorar",
+    "noEvents" : "No hi ha esdeveniments pròxims"
+  },
+  "hero" : {
+    "events" : "Activitats",
+    "menu" : "Menú",
+    "location" : "Ubicació",
+    "explore" : "Explorar"
+  }
+}

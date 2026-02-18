@@ -1,0 +1,100 @@
+{
+  "navigation" : {
+    "barName" : "Ca'n Guiem Nou",
+    "home" : "Accueil",
+    "events" : "Événements",
+    "menu" : "Menu",
+    "about" : "À propos",
+    "location" : "Localisation"
+  },
+  "home" : {
+    "hero" : {
+      "title" : "Cocktails Artisanaux & Moments Mémorables",
+      "viewMenu" : "Voir le Menu",
+      "visitUs" : "Nous Rendre Visite"
+    },
+    "weeklyMenu" : {
+      "title" : "Menu de Cette Semaine",
+      "seeFullMenu" : "Voir le Menu Complet"
+    },
+    "ourStory" : {
+      "title" : "Notre Histoire",
+      "readMore" : "Lire Plus",
+      "founded" : "Fondé",
+      "yearsOfHistory" : "Ans d'Histoire"
+    },
+    "contact" : {
+      "title" : "Nous Rendre Visite",
+      "address" : "Adresse",
+      "phone" : "Téléphone",
+      "email" : "Email"
+    },
+    "footer" : {
+      "openingHours" : "Horaires",
+      "contactUs" : "Contact",
+      "followUs" : "Suivez-nous",
+      "rights" : "Tous droits réservés",
+      "rateUs" : "Évaluez-nous sur Google",
+      "mon" : "Lundi",
+      "tue" : "Mardi",
+      "wed" : "Mercredi",
+      "thu" : "Jeudi",
+      "fri" : "Vendredi",
+      "sat" : "Samedi",
+      "sun" : "Dimanche"
+    },
+    "location" : {
+      "title" : "Nous Rendre Visite",
+      "getDirections" : "Itinéraire",
+      "openingHours" : "Horaires",
+      "closed" : "Fermé",
+      "contactUs" : "Contact"
+    }
+  },
+  "menu" : {
+    "title" : "Notre Menu",
+    "downloadPdf" : "Télécharger le Menu (PDF)",
+    "comingSoon" : "Menu Bientôt Disponible",
+    "checkBack" : "Revenez bientôt pour nos dernières offres!",
+    "readyToVisit" : "Prêt à nous rendre visite?",
+    "getDirections" : "Itinéraire",
+    "featured" : "Recommandé",
+    "unavailable" : "Indisponible",
+    "categories" : {
+      "tapas" : "Tapas",
+      "pizzas" : "Pizzas",
+      "ensaladas" : "Salades",
+      "pamboli" : "Pamboli",
+      "burgers" : "Burgers",
+      "algo-mas" : "Encore Plus"
+    },
+    "digitalMenu" : "Menu Digital",
+    "exploreMenu" : "Explorez Nos Plats",
+    "downloadMenu" : "Télécharger le Menu",
+    "lunchSpecial" : "Plat du Jour",
+    "weeklyLunch" : "Menu Hebdo",
+    "fullMenu" : "Menu Complet"
+  },
+  "location" : {
+    "title" : "Nous Rendre Visite",
+    "getDirections" : "Itinéraire",
+    "openingHours" : "Horaires",
+    "closed" : "Fermé",
+    "contactUs" : "Contact"
+  },
+  "dailyMenu" : {
+    "title" : "Plat du Jour"
+  },
+  "downloadMenu" : "Télécharger le Menu",
+  "events" : {
+    "title" : "Événements",
+    "explore" : "Explorer",
+    "noEvents" : "Aucun événement à venir"
+  },
+  "hero" : {
+    "events" : "Événements",
+    "menu" : "Menu",
+    "location" : "Localisation",
+    "explore" : "Explorer"
+  }
+}

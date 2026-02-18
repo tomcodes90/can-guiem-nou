@@ -1,0 +1,92 @@
+{
+  "navigation" : {
+    "barName" : "Ca'n Guiem Nou",
+    "home" : "Inicio",
+    "events" : "Eventos",
+    "menu" : "Menú",
+    "about" : "Nosotros",
+    "location" : "Ubicación"
+  },
+  "home" : {
+    "hero" : {
+      "title" : "Cócteles Artesanales y Momentos Memorables",
+      "viewMenu" : "Ver Menú",
+      "visitUs" : "Visítanos"
+    },
+    "weeklyMenu" : {
+      "title" : "Menú de Esta Semana",
+      "seeFullMenu" : "Ver Menú Completo"
+    },
+    "ourStory" : {
+      "title" : "Nuestra Historia",
+      "readMore" : "Leer Más",
+      "founded" : "Fundado",
+      "yearsOfHistory" : "Años de Historia"
+    },
+    "contact" : {
+      "title" : "Visítanos",
+      "address" : "Dirección",
+      "phone" : "Teléfono",
+      "email" : "Correo"
+    },
+    "location" : {
+      "title" : "Visítanos",
+      "getDirections" : "Cómo Llegar",
+      "openingHours" : "Horario",
+      "closed" : "Cerrado",
+      "contactUs" : "Contacto"
+    },
+    "footer" : {
+      "openingHours" : "Horario",
+      "contactUs" : "Contacto",
+      "followUs" : "Síguenos",
+      "rights" : "Todos los derechos reservados",
+      "rateUs" : "Valóranos en Google",
+      "mon" : "Lunes",
+      "tue" : "Martes",
+      "wed" : "Miércoles",
+      "thu" : "Jueves",
+      "fri" : "Viernes",
+      "sat" : "Sábado",
+      "sun" : "Domingo"
+    }
+  },
+  "menu" : {
+    "title" : "Nuestro Menú",
+    "downloadPdf" : "Descargar Menú (PDF)",
+    "comingSoon" : "Menú Próximamente",
+    "checkBack" : "¡Vuelve pronto para ver nuestras últimas ofertas!",
+    "readyToVisit" : "¿Listo para visitarnos?",
+    "getDirections" : "Cómo Llegar",
+    "featured" : "Destacado",
+    "unavailable" : "No Disponible",
+    "digitalMenu" : "Menú Digital",
+    "exploreMenu" : "Explora Nuestros Platos",
+    "downloadMenu" : "Descargar Menú",
+    "categories" : {
+      "tapas" : "Tapas",
+      "pizzas" : "Pizzas",
+      "ensaladas" : "Ensaladas",
+      "pamboli" : "Pamboli",
+      "burgers" : "Burgers",
+      "algo-mas" : "Algo Más"
+    },
+    "lunchSpecial" : "Menú del Día",
+    "weeklyLunch" : "Menú Semanal",
+    "fullMenu" : "Menú Completo"
+  },
+  "dailyMenu" : {
+    "title" : "Menú del Día"
+  },
+  "events" : {
+    "title" : "Eventos",
+    "explore" : "Explorar",
+    "noEvents" : "No hay eventos próximos"
+  },
+  "hero" : {
+    "events" : "Eventos",
+    "menu" : "Menú",
+    "location" : "Ubicación",
+    "explore" : "Explorar"
+  }
+}

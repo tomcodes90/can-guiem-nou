@@ -1,0 +1,93 @@
+{
+  "navigation" : {
+    "barName" : "Ca'n Guiem Nou",
+    "home" : "Startseite",
+    "events" : "Events",
+    "menu" : "Menü",
+    "about" : "Über uns",
+    "location" : "Standort"
+  },
+  "home" : {
+    "hero" : {
+      "title" : "Handgemachte Cocktails & Unvergessliche Momente",
+      "viewMenu" : "Menü Ansehen",
+      "visitUs" : "Besuchen Sie uns"
+    },
+    "weeklyMenu" : {
+      "title" : "Menü dieser Woche",
+      "seeFullMenu" : "Komplettes Menü"
+    },
+    "ourStory" : {
+      "title" : "Unsere Geschichte",
+      "readMore" : "Mehr Lesen",
+      "founded" : "Gegründet",
+      "yearsOfHistory" : "Jahre Geschichte"
+    },
+    "contact" : {
+      "title" : "Besuchen Sie uns",
+      "address" : "Adresse",
+      "phone" : "Telefon",
+      "email" : "E-Mail"
+    },
+    "footer" : {
+      "openingHours" : "Öffnungszeiten",
+      "contactUs" : "Kontakt",
+      "followUs" : "Folge uns",
+      "rights" : "Alle Rechte vorbehalten",
+      "rateUs" : "Bewerte uns auf Google",
+      "mon" : "Montag",
+      "tue" : "Dienstag",
+      "wed" : "Mittwoch",
+      "thu" : "Donnerstag",
+      "fri" : "Freitag",
+      "sat" : "Samstag",
+      "sun" : "Sonntag"
+    },
+    "location" : {
+      "title" : "Besuchen Sie uns",
+      "getDirections" : "Wegbeschreibung",
+      "openingHours" : "Öffnungszeiten",
+      "closed" : "Geschlossen",
+      "contactUs" : "Kontakt"
+    }
+  },
+  "menu" : {
+    "title" : "Unser Menü",
+    "downloadPdf" : "Menü Herunterladen (PDF)",
+    "comingSoon" : "Menü Kommt Bald",
+    "checkBack" : "Schauen Sie bald wieder vorbei!",
+    "readyToVisit" : "Bereit für einen Besuch?",
+    "getDirections" : "Wegbeschreibung",
+    "featured" : "Empfohlen",
+    "unavailable" : "Nicht Verfügbar",
+    "categories" : {
+      "tapas" : "Tapas",
+      "pizzas" : "Pizzen",
+      "ensaladas" : "Salate",
+      "pamboli" : "Pamboli",
+      "burgers" : "Burger",
+      "algo-mas" : "Noch Mehr"
+    },
+    "digitalMenu" : "Digitale Speisekarte",
+    "exploreMenu" : "Entdecke Unsere Gerichte",
+    "downloadMenu" : "Menü Herunterladen",
+    "lunchSpecial" : "Tagesmenü",
+    "weeklyLunch" : "Wochenmenü",
+    "fullMenu" : "Vollständiges Menü"
+  },
+  "dailyMenu" : {
+    "title" : "Tagesmenü"
+  },
+  "downloadMenu" : "Menü Herunterladen",
+  "events" : {
+    "title" : "Events",
+    "explore" : "Entdecken",
+    "noEvents" : "Keine bevorstehenden Veranstaltungen"
+  },
+  "hero" : {
+    "events" : "Events",
+    "menu" : "Menü",
+    "location" : "Standort",
+    "explore" : "Entdecken"
+  }
+}

@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+    --color-can-nou-primary: #C4622D;
+    --color-can-nou-secondary: #E8955A;
+    --color-can-nou-accent: #F2C680;
+    --color-can-nou-dark: #292524;
+    --color-can-nou-light: #fafaf9;
+    --font-baskerville: 'Libre Baskerville', serif;
+    --font-nothing: var(--font-nothing);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@layer utilities {
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes progress {
+    from {
+        width: 0%
+    }
+    to {
+        width: 100%
+    }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-progress {
+    animation: progress linear forwards;
 }
