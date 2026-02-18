@@ -1,13 +1,18 @@
-import createNextIntlPlugin from 'next-intl/plugin'
+import type {NextConfig} from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const withNextIntl = createNextIntlPlugin('./i18n.ts')
+const withNextIntl = createNextIntlPlugin();
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
     images: {
-        domains: ['cdn.sanity.io'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'cdn.sanity.io',
+                pathname: '/**',
+            },
+        ],
     },
+};
 
-}
-
-module.exports = withNextIntl(nextConfig)
+export default withNextIntl(nextConfig);
