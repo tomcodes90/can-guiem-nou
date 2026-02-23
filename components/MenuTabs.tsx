@@ -17,6 +17,7 @@ interface MenuTabsProps {
         exploreMenu: string
         lunchSpecial: string
         categoryTranslations: Record<string, string>
+        dayTranslations: Record<string, string>
     }
 }
 
@@ -35,7 +36,7 @@ export default function MenuTabs({weeklyLunch, menuItems, locale, translations}:
     }
 
     return (
-        <div className="container mx-auto px-4 pb-20">
+        <div className="container mx-auto px-4 pt-20">
             <div className="max-w-5xl mx-auto">
 
                 {/* Tabs - only show if weekly menu exists */}
@@ -101,7 +102,7 @@ export default function MenuTabs({weeklyLunch, menuItems, locale, translations}:
                                         <div className="flex justify-between items-start gap-2 mb-2">
                                             <div className="flex-1 min-w-0">
                                                 <p className="text-can-nou-accent text-xs font-semibold tracking-widest uppercase mb-1">
-                                                    {lunch.dayOfWeek}
+                                                    {translations.dayTranslations[lunch.dayOfWeek] || lunch.dayOfWeek}
                                                 </p>
                                                 <h3 className="font-baskerville italic text-xl text-white leading-tight">
                                                     {getLocalizedValue(lunch.dishName, locale)}

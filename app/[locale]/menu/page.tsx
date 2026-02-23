@@ -34,6 +34,7 @@ export default async function MenuPage({
     const barInfo = await getBarInfo()
     const weeklyLunch = await getWeeklyLunchMenu()
     const t = await getTranslations('menu')
+    const tHome = await getTranslations('home')
 
     // Prepare translations for the client component
     const translations = {
@@ -49,6 +50,15 @@ export default async function MenuPage({
             'pamboli': t('categories.pamboli'),
             'burgers': t('categories.burgers'),
             'algo-mas': t('categories.algo-mas'),
+        },
+        dayTranslations: {
+            'Monday': tHome('footer.mon'),
+            'Tuesday': tHome('footer.tue'),
+            'Wednesday': tHome('footer.wed'),
+            'Thursday': tHome('footer.thu'),
+            'Friday': tHome('footer.fri'),
+            'Saturday': tHome('footer.sat'),
+            'Sunday': tHome('footer.sun'),
         }
     }
 
@@ -71,7 +81,6 @@ export default async function MenuPage({
                     <a href={urlFor(barInfo.menuImage).url()}
                        target="_blank"
                        rel="noopener noreferrer"
-                       download="menu-can-nou.png"
                        className="inline-flex items-center gap-2 border border-can-nou-accent text-can-nou-accent px-8 py-3 text-xs font-semibold tracking-widest uppercase hover:bg-can-nou-accent hover:text-can-nou-dark transition-all duration-300"
                     >
                         <Download className="w-4 h-4"/>
@@ -82,8 +91,8 @@ export default async function MenuPage({
 
             <Separator/>
 
-            {/* Tabbed Menu */}
-            {weeklyLunch && weeklyLunch.length > 0 && items && items.length > 0 ? (
+            {/* Tabbed Menu - only show if there's content */}
+            {(weeklyLunch && weeklyLunch.length > 0) || (items && items.length > 0) ? (
                 <MenuTabs
                     weeklyLunch={weeklyLunch}
                     menuItems={items}
