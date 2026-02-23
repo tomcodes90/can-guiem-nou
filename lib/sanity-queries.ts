@@ -117,17 +117,25 @@ export async function getTodayLunchSpecial(): Promise<DailyMenu | null> {
 }
 
 export async function getWeeklyLunchMenu(): Promise<DailyMenu[]> {
-    const query = `*[_type == "dailyMenu" && active == true] | order(dayOfWeek asc){
-    _id,
-    dayOfWeek,
-    dishName,
-    description,
-    price,
-    photo,
-    active,
-    lunchHours
-  }`
-    return await client.fetch(query)
+    const dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+    const menus = await client.fetch<DailyMenu[]>(
+        `*[_type == "dailyMenu" && active == true] {
+      _id,
+      dayOfWeek,
+      dishName,
+      description,
+      price,
+      photo,
+      lunchHours,
+      active
+    }`
+    )
+
+    // Sort by day of week
+    return menus.sort((a, b) => {
+        return dayOrder.indexOf(a.dayOfWeek) - dayOrder.indexOf(b.dayOfWeek)
+    })
 }
 
 export async function getUpcomingEvents(): Promise<Event[]> {

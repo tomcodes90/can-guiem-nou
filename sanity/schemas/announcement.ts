@@ -2,69 +2,80 @@ import {defineType, defineField} from 'sanity'
 
 export default defineType({
     name: 'announcement',
-    title: 'Announcements',
+    title: 'Anuncio',
     type: 'document',
     fields: [
         defineField({
             name: 'title',
-            title: 'Title',
+            title: 'Título',
             type: 'localizedString',
             validation: Rule => Rule.required()
         }),
         defineField({
             name: 'subtitle',
-            title: 'Subtitle',
+            title: 'Subtítulo',
             type: 'localizedString',
         }),
         defineField({
             name: 'type',
-            title: 'Type',
+            title: 'Tipo',
             type: 'string',
             options: {
                 list: [
-                    {title: 'Daily Menu', value: 'daily-menu'},
-                    {title: 'Event', value: 'event'},
-                    {title: 'Custom Message', value: 'custom'},
+                    {title: 'Menú del Día', value: 'daily-menu'},
+                    {title: 'Evento', value: 'event'},
+                    {title: 'Personalizado', value: 'custom'},
                 ]
             },
+            initialValue: 'custom',
             validation: Rule => Rule.required()
         }),
         defineField({
             name: 'link',
-            title: 'Link',
+            title: 'Enlace',
             type: 'string',
-            description: 'Optional - where clicking takes the user (e.g. /menu, /events)',
+            options: {
+                list: [
+                    {title: 'Inicio', value: '/'},
+                    {title: 'Eventos', value: '/events'},
+                    {title: 'Menú', value: '/menu'},
+                    {title: 'Ubicación', value: '/location'},
+                ]
+            },
+            description: 'Página a la que llevará el anuncio al hacer clic'
         }),
         defineField({
             name: 'image',
-            title: 'Image',
+            title: 'Imagen',
             type: 'image',
             options: {hotspot: true}
         }),
         defineField({
             name: 'active',
-            title: 'Show on website',
+            title: 'Activo',
             type: 'boolean',
             initialValue: true
         }),
         defineField({
             name: 'order',
-            title: 'Order',
+            title: 'Orden',
             type: 'number',
-            description: 'Order in which this appears in the carousel',
-            initialValue: 0
-        }),
+            description: 'Orden de aparición (menor número = primero)',
+            validation: Rule => Rule.integer().min(0)
+        })
     ],
     preview: {
         select: {
             title: 'title.es',
             type: 'type',
+            media: 'image',
             active: 'active'
         },
-        prepare({title, type, active}) {
+        prepare({title, type, media, active}) {
             return {
-                title: title || 'No title',
-                subtitle: `${type} ${active ? '(Active)' : '(Hidden)'}`
+                title: title || 'Sin título',
+                subtitle: `${type}${active ? '' : ' (inactivo)'}`,
+                media
             }
         }
     }

@@ -2,50 +2,49 @@ import {defineType, defineField} from 'sanity'
 
 export default defineType({
     name: 'event',
-    title: 'Events',
+    title: 'Evento',
     type: 'document',
     fields: [
         defineField({
             name: 'name',
-            title: 'Event Name',
+            title: 'Nombre del Evento',
             type: 'localizedString',
             validation: Rule => Rule.required()
         }),
         defineField({
             name: 'description',
-            title: 'Description',
+            title: 'Descripción',
             type: 'localizedText',
         }),
         defineField({
             name: 'date',
-            title: 'Date',
+            title: 'Fecha y Hora',
             type: 'datetime',
             validation: Rule => Rule.required()
         }),
         defineField({
             name: 'flyer',
-            title: 'Event Flyer',
+            title: 'Cartel',
             type: 'image',
             options: {hotspot: true}
         }),
         defineField({
             name: 'active',
-            title: 'Show on website',
+            title: 'Mostrar en la web',
             type: 'boolean',
             initialValue: true
-        }),
+        })
     ],
     preview: {
         select: {
-            title: 'name.es',
+            name: 'name.es',
             date: 'date',
-            media: 'flyer',
-            active: 'active'
+            media: 'flyer'
         },
-        prepare({title, date, media, active}) {
+        prepare({name, date, media}) {
             return {
-                title: title || 'No name',
-                subtitle: `${date} ${active ? '(Active)' : '(Hidden)'}`,
+                title: name,
+                subtitle: date ? new Date(date).toLocaleDateString('es-ES') : 'Sin fecha',
                 media
             }
         }

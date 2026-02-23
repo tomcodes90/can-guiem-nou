@@ -2,18 +2,18 @@ import {defineType, defineField} from 'sanity'
 
 export default defineType({
     name: 'menuItem',
-    title: 'Menu Item',
+    title: 'Plato del Menú',
     type: 'document',
     fields: [
         defineField({
             name: 'name',
-            title: 'Item Name',
+            title: 'Nombre del Plato',
             type: 'localizedString',
             validation: Rule => Rule.required()
         }),
         defineField({
             name: 'category',
-            title: 'Category',
+            title: 'Categoría',
             type: 'string',
             options: {
                 list: [
@@ -29,30 +29,30 @@ export default defineType({
         }),
         defineField({
             name: 'description',
-            title: 'Description',
+            title: 'Descripción',
             type: 'localizedText',
         }),
         defineField({
             name: 'price',
-            title: 'Price (€)',
+            title: 'Precio (€)',
             type: 'number',
             validation: Rule => Rule.required().positive()
         }),
         defineField({
             name: 'image',
-            title: 'Image',
+            title: 'Imagen',
             type: 'image',
             options: {hotspot: true}
         }),
         defineField({
             name: 'available',
-            title: 'Available',
+            title: 'Disponible',
             type: 'boolean',
             initialValue: true
         }),
         defineField({
             name: 'featured',
-            title: 'Featured Item',
+            title: 'Destacado',
             type: 'boolean',
             initialValue: false
         })

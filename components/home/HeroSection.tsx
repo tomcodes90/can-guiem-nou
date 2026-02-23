@@ -1,11 +1,12 @@
+'use client'
+
+import {useState, useEffect, useRef} from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import {getTranslations} from 'next-intl/server'
+import {useTranslations} from 'next-intl'
 import {type BarInfo, type Locale} from '@/lib/sanity-queries'
 import {urlFor} from '@/lib/sanity'
 import {type SanityImageSource} from '@sanity/image-url/lib/types/types'
-import {Instagram, Facebook} from 'lucide-react'
-import Separator from "@/components/Separator";
 
 interface HeroSectionProps {
     barInfo: BarInfo
@@ -18,8 +19,10 @@ interface HeroColumn {
     image?: SanityImageSource
 }
 
-export default async function HeroSection({barInfo, locale}: HeroSectionProps) {
-    const t = await getTranslations('hero')
+export default function HeroSection({barInfo, locale}: HeroSectionProps) {
+    const t = useTranslations('hero')
+    const [activeSlide, setActiveSlide] = useState(0)
+    const scrollContainerRef = useRef<HTMLDivElement>(null)
 
     const columns: HeroColumn[] = [
         {
@@ -39,12 +42,29 @@ export default async function HeroSection({barInfo, locale}: HeroSectionProps) {
         },
     ]
 
+    useEffect(() => {
+        const container = scrollContainerRef.current
+        if (!container) return
+
+        const handleScroll = () => {
+            const scrollLeft = container.scrollLeft
+            const slideWidth = container.offsetWidth * 0.85
+            const currentSlide = Math.round(scrollLeft / slideWidth)
+            setActiveSlide(currentSlide)
+        }
+
+        container.addEventListener('scroll', handleScroll, {passive: true})
+        return () => container.removeEventListener('scroll', handleScroll)
+    }, [])
+
     return (
         <section className="h-screen -mt-16 relative">
 
             {/* Columns container */}
             <div
-                className="flex h-full overflow-x-auto snap-x snap-mandatory scroll-smooth md:overflow-x-visible scrollbar-hide">
+                ref={scrollContainerRef}
+                className="flex h-full overflow-x-auto snap-x snap-mandatory scroll-smooth md:overflow-x-visible scrollbar-hide"
+            >
                 {columns.map((column, index) => (
                     <div
                         key={column.key}
@@ -72,10 +92,10 @@ export default async function HeroSection({barInfo, locale}: HeroSectionProps) {
                             <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-white/20 z-10"/>
                         )}
 
-                        {/* Content */}
+                        {/* Desktop content - inside each column */}
                         <div
-                            className="absolute inset-0 flex flex-col items-center justify-end text-white z-10 pb-24 px-6">
-                            <h2 className="font-nothing text-4xl md:text-5xl lg:text-6xl font-bold italic mb-8 text-center drop-shadow-lg">
+                            className="hidden md:flex absolute inset-0 flex-col items-center justify-end text-white z-10 pb-24 px-6">
+                            <h2 className="font-nothing text-5xl lg:text-6xl mb-8 text-center drop-shadow-lg">
                                 {t(column.key)}
                             </h2>
                             <Link
@@ -87,17 +107,29 @@ export default async function HeroSection({barInfo, locale}: HeroSectionProps) {
                         </div>
                     </div>
                 ))}
-
             </div>
 
             {/* Centered bar name overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
-                <h1 className="font-baskerville text-white text-4xl md:text-5xl lg:text-6xl font-bold italic drop-shadow-lg tracking-wide text-center">
+                <h1 className="font-nothing text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-lg tracking-wide text-center px-4">
                     Ca&apos;n Guiem Nou
                 </h1>
-                <p className="text-white/80 text-sm md:text-base tracking-widest uppercase mt-2 drop-shadow">
+                <p className="text-white/80 text-sm md:text-base tracking-widest uppercase mt-2 drop-shadow text-center px-4">
                     Pamboleria · Desde 1859
                 </p>
+            </div>
+
+            {/* Mobile only - single title/button overlay for active slide */}
+            <div className="md:hidden absolute bottom-24 left-0 right-0 z-20 flex flex-col items-center">
+                <h2 className="font-nothing text-4xl mb-8 text-center drop-shadow-lg px-4 text-white">
+                    {columns[activeSlide] && t(columns[activeSlide].key)}
+                </h2>
+                <Link
+                    href={columns[activeSlide]?.href || '/'}
+                    className="border-2 border-white text-white px-8 py-3 text-sm font-semibold tracking-widest uppercase hover:bg-white hover:text-can-nou-dark transition-all duration-300"
+                >
+                    {t('explore')}
+                </Link>
             </div>
 
             {/* Mobile scroll dots */}
@@ -105,14 +137,12 @@ export default async function HeroSection({barInfo, locale}: HeroSectionProps) {
                 {columns.map((_, index) => (
                     <div
                         key={index}
-                        className={`w-2 h-2 rounded-full bg-white ${
-                            index === 0 ? 'opacity-100' : 'opacity-40'
+                        className={`w-2 h-2 rounded-full bg-white transition-opacity duration-300 ${
+                            index === activeSlide ? 'opacity-100' : 'opacity-40'
                         }`}
                     />
                 ))}
             </div>
-
         </section>
-
     )
 }

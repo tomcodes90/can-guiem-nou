@@ -99,7 +99,7 @@ export default async function MenuPage({
             )}
 
             {/* Footer CTA */}
-            <section className="border-t border-white/10 py-16 text-center">
+            <section className="border-t border-white/10 py-12 text-center">
                 <p className="font-baskerville italic text-2xl text-white mb-6">
                     {t('readyToVisit')}
                 </p>

@@ -34,7 +34,7 @@ export default function MenuTabs({weeklyLunch, menuItems, locale, translations}:
     }
 
     return (
-        <div className="container mx-auto px-4 py-20">
+        <div className="container mx-auto px-4 pt-20">
             <div className="max-w-5xl mx-auto">
 
                 {/* Tabs */}
@@ -75,7 +75,7 @@ export default function MenuTabs({weeklyLunch, menuItems, locale, translations}:
                         </div>
 
                         {/* Weekly grid */}
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid md:grid-cols-2 gap-6 mb-12">
                             {weeklyLunch.map((lunch) => (
                                 <div
                                     key={lunch._id}

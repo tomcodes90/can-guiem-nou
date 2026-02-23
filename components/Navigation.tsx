@@ -63,7 +63,7 @@ export default function Navigation({instagram, facebook}: NavigationProps) {
                         {/* Left - Bar name */}
                         <Link
                             href={`/${locale}`}
-                            className="text-2xl font-baskerville font-bold italic text-white"
+                            className="text-lg md:text-2xl font-nothing font-bold italic text-white"
                         >
                             Ca&apos;n Guiem Nou
                         </Link>

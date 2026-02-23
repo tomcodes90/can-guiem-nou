@@ -1,16 +1,22 @@
 import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
+import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './sanity/schemas'
+import {esESLocale} from '@sanity/locale-es-es'
+import {projectId, dataset} from './sanity/env'
 
 export default defineConfig({
     name: 'default',
-    title: 'Bar Website',
+    title: 'Ca\'n Guiem Nou',
 
-    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'sqg33klv',
-    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+    projectId,
+    dataset,
 
-    plugins: [deskTool(), visionTool()],
+    plugins: [
+        structureTool(),
+        visionTool(),
+        esESLocale(),
+    ],
 
     schema: {
         types: schemaTypes,
