@@ -68,10 +68,9 @@ export default function Navigation({instagram, facebook}: NavigationProps) {
                             Ca&apos;n Guiem Nou
                         </Link>
 
-                        {/* Center - Social icons */}
-                        <div className="flex items-center gap-3 absolute left-1/2 -translate-x-1/2">
+                        {/* Center - Social icons (desktop only) */}
+                        <div className="hidden md:flex items-center gap-3 absolute left-1/2 -translate-x-1/2">
                             {instagram && (
-
                                 <a href={instagram}
                                    target="_blank"
                                    rel="noopener noreferrer"
@@ -81,7 +80,6 @@ export default function Navigation({instagram, facebook}: NavigationProps) {
                                 </a>
                             )}
                             {facebook && (
-
                                 <a href={facebook}
                                    target="_blank"
                                    rel="noopener noreferrer"
@@ -92,8 +90,30 @@ export default function Navigation({instagram, facebook}: NavigationProps) {
                             )}
                         </div>
 
-                        {/* Right - Language + Hamburger (always visible) */}
+                        {/* Right - Social (mobile) + Language + Hamburger */}
                         <div className="flex items-center gap-3">
+                            {/* Social icons mobile only */}
+                            <div className="flex md:hidden items-center gap-2">
+                                {instagram && (
+                                    <a href={instagram}
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="w-9 h-9 flex items-center justify-center bg-can-nou-primary hover:bg-can-nou-secondary transition-colors duration-300"
+                                    >
+                                        <Instagram className="w-4 h-4 text-white"/>
+                                    </a>
+                                )}
+                                {facebook && (
+                                    <a href={facebook}
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="w-9 h-9 flex items-center justify-center bg-can-nou-primary hover:bg-can-nou-secondary transition-colors duration-300"
+                                    >
+                                        <Facebook className="w-4 h-4 text-white"/>
+                                    </a>
+                                )}
+                            </div>
+
                             <LanguageSwitcher isHome={isHome}/>
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
@@ -141,10 +161,9 @@ export default function Navigation({instagram, facebook}: NavigationProps) {
                         ))}
                     </div>
 
-                    {/* Social icons */}
+                    {/* Social icons in menu */}
                     <div className="flex gap-4 mt-16">
                         {instagram && (
-
                             <a href={instagram}
                                target="_blank"
                                rel="noopener noreferrer"
@@ -154,7 +173,6 @@ export default function Navigation({instagram, facebook}: NavigationProps) {
                             </a>
                         )}
                         {facebook && (
-
                             <a href={facebook}
                                target="_blank"
                                rel="noopener noreferrer"
