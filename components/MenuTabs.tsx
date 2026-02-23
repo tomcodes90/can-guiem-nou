@@ -21,7 +21,8 @@ interface MenuTabsProps {
 }
 
 export default function MenuTabs({weeklyLunch, menuItems, locale, translations}: MenuTabsProps) {
-    const [activeTab, setActiveTab] = useState<'weekly' | 'full'>('weekly')
+    const hasWeeklyMenu = weeklyLunch && weeklyLunch.length > 0
+    const [activeTab, setActiveTab] = useState<'weekly' | 'full'>(hasWeeklyMenu ? 'weekly' : 'full')
 
     const groupByCategory = (items: MenuItem[]) => {
         return items.reduce((acc, item) => {
@@ -34,35 +35,37 @@ export default function MenuTabs({weeklyLunch, menuItems, locale, translations}:
     }
 
     return (
-        <div className="container mx-auto px-4 pt-20">
+        <div className="container mx-auto px-4 pb-20">
             <div className="max-w-5xl mx-auto">
 
-                {/* Tabs */}
-                <div className="flex justify-center gap-4 mb-16">
-                    <button
-                        onClick={() => setActiveTab('full')}
-                        className={`px-8 py-3 text-sm font-semibold tracking-widest uppercase transition-all duration-300 ${
-                            activeTab === 'full'
-                                ? 'bg-can-nou-accent text-can-nou-dark'
-                                : 'border border-can-nou-accent text-can-nou-accent hover:bg-can-nou-accent/10'
-                        }`}
-                    >
-                        {translations.fullMenu}
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('weekly')}
-                        className={`px-8 py-3 text-sm font-semibold tracking-widest uppercase transition-all duration-300 ${
-                            activeTab === 'weekly'
-                                ? 'bg-can-nou-accent text-can-nou-dark'
-                                : 'border border-can-nou-accent text-can-nou-accent hover:bg-can-nou-accent/10'
-                        }`}
-                    >
-                        {translations.weeklyLunch}
-                    </button>
-                </div>
+                {/* Tabs - only show if weekly menu exists */}
+                {hasWeeklyMenu && (
+                    <div className="flex justify-center gap-4 mb-16">
+                        <button
+                            onClick={() => setActiveTab('full')}
+                            className={`px-8 py-3 text-sm font-semibold tracking-widest uppercase transition-all duration-300 ${
+                                activeTab === 'full'
+                                    ? 'bg-can-nou-accent text-can-nou-dark'
+                                    : 'border border-can-nou-accent text-can-nou-accent hover:bg-can-nou-accent/10'
+                            }`}
+                        >
+                            {translations.fullMenu}
+                        </button>
+                        <button
+                            onClick={() => setActiveTab('weekly')}
+                            className={`px-8 py-3 text-sm font-semibold tracking-widest uppercase transition-all duration-300 ${
+                                activeTab === 'weekly'
+                                    ? 'bg-can-nou-accent text-can-nou-dark'
+                                    : 'border border-can-nou-accent text-can-nou-accent hover:bg-can-nou-accent/10'
+                            }`}
+                        >
+                            {translations.weeklyLunch}
+                        </button>
+                    </div>
+                )}
 
                 {/* Tab Content */}
-                {activeTab === 'weekly' ? (
+                {activeTab === 'weekly' && hasWeeklyMenu ? (
                     <div>
                         {/* Section intro */}
                         <div className="text-center mb-12">
@@ -106,8 +109,8 @@ export default function MenuTabs({weeklyLunch, menuItems, locale, translations}:
                                             </div>
                                             <span
                                                 className="text-can-nou-accent font-semibold text-lg flex-shrink-0 ml-2">
-      €{lunch.price.toFixed(2)}
-    </span>
+                                                €{lunch.price.toFixed(2)}
+                                            </span>
                                         </div>
                                         {lunch.description && (
                                             <p className="text-white/50 text-sm">
