@@ -2,7 +2,7 @@ import {MetadataRoute} from 'next'
 import {locales} from '@/i18n'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://cannou.com' // Update this when domain is ready
+    const baseUrl = 'https://canguiemnou.com' // Update this when domain is ready
 
     const routes = ['', '/events', '/menu', '/location']
 

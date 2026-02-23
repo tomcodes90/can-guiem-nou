@@ -19,7 +19,7 @@ export async function generateMetadata({
 
     return {
         title: `${barInfo?.name || "Ca'n Guiem Nou"} - ${t('hero.title')}`,
-        description: `Pamboleria Ca'n Guiem Nou - Desde 1859 - ${barInfo?.address.city}`,
+        description: `Pamboleria Ca'n Guiem Nou - Sabor Auténtico y Buen Ambiente desde 1859 - ${barInfo?.address.city}`,
     }
 }
 

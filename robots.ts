@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/studio/', // Don't index Sanity Studio
         },
-        sitemap: 'https://cannou.com/sitemap.xml', // Update this when domain is ready
+        sitemap: 'https://canguiemnou.com/sitemap.xml', // Update this when domain is ready
     }
 }
