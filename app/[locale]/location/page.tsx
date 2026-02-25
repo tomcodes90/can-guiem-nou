@@ -49,7 +49,7 @@ export default async function LocationPage({
                 <p className="text-can-nou-accent text-xs font-semibold tracking-widest uppercase mb-4">
                     Ca&apos;n Guiem Nou
                 </p>
-                <h1 className="font-nothing italic text-5xl md:text-6xl text-white mb-4">
+                <h1 className="font-nothing italic text-4xl md:text-6xl text-white mb-4">
                     {t('location.title')}
                 </h1>
                 <div className="w-16 h-0.5 bg-can-nou-primary mx-auto"/>
